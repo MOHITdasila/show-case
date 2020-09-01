@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { of, BehaviorSubject } from 'rxjs';
 
@@ -35,10 +35,19 @@ export class ProductService {
 productInfo$ = new BehaviorSubject<any>([]);
     getProductInfo(){
         this.productInfo$.next(this.dummyProducts);
-        // return productInfo;
-        // return this.http
-        //   .get(`/info`)
-        //   .pipe(catchError(err => of(err)));
+        return this.http
+          .get('http://localhost:3000/read/', {
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+            }
+          })
+          .pipe(catchError(err => of(err)));
+
+      }
+
+      createAuthorizationHeader(headers: Headers) {
+        headers.append('Authorization', 'Basic ' +
+          btoa('username:password'));
       }
 
 }
