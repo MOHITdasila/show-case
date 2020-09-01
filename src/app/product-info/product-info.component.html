@@ -1,0 +1,57 @@
+
+<div class="toolbar" role="banner">
+    <img
+      width="40"
+      alt="Angular Logo"
+      src="assets/productLogo.png"
+    />
+    <span >Welcome To Product Catalog</span>
+      <div class="spacer"></div>
+  </div>
+  <div>
+    
+  </div>
+  <div class="content">
+  
+    <!-- Highlight Card -->
+    <div class="highlight-card card-small">
+      <span style="font-size: 30px;color:#1976d2;">Get All Variety Of Products</span>
+    </div>
+  <!-- <app-product-info></app-product-info> -->
+  <div class="card-container">
+    <div *ngFor='let product of productInfo' class="card">
+     <div style="height:200px">
+         <img
+         width="100%"
+         alt="Angular Logo"
+         src="assets/{{product.title}}.jpg"
+       />
+     </div>
+    <div style="text-align: center;font-weight: 600;">
+     <span>{{product.title | uppercase}}</span>
+    </div>
+    <div style="text-align: center;">
+     <span>{{product.discription | uppercase}}</span>
+    </div>
+    <div style="text-align: center;">
+     <span>Last {{product.stock }} in stock</span>
+    </div>
+    <div style="text-align: center;display: flex;
+    align-items: center;
+    justify-content: center;">
+     <span class="material-icons" (click)='likedProduct(product)'>
+         thumb_up
+         </span>
+         <span style="margin-left:5px">{{product.likes}}</span>
+    </div> 
+    <div style="text-align: center;">
+     <button style="margin-top: 25px;" mat-raised-button (click)='buyProduct(product)'>Buy {{product.price}}</button>
+    </div>
+         
+    </div>
+   
+ 
+   </div>
+  </div>
+
+

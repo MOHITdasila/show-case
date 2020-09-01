@@ -1,0 +1,37 @@
+
+<div style="display: flex;
+justify-content: center;
+height: 100%;">
+<mat-card class="login_card">
+    <mat-card-title>
+      <div class="card_title">
+        <img height="80px" width="70%" src="assets/productLogo.png" />
+      </div>
+    </mat-card-title>
+    <mat-card-content>
+      <div style="margin-top:40px;text-align: center;">
+        <form [formGroup]="logInForm" >
+          <div>
+            <mat-form-field style="width:90%" appearance="outline">
+              <mat-label>E-mail</mat-label>
+              <input formControlName="email" matInput type="email" placeholder="E-mail" />
+            </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field style="width:90%" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input formControlName="password" matInput  placeholder="Password" />
+            </mat-form-field>
+          </div>
+          <div style="margin-top: 50px;">
+            <button mat-raised-button class="logInButton" (click)='login()'>
+              LOG IN
+            </button>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+  
