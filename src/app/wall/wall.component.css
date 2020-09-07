@@ -1,0 +1,9 @@
+.side-bar {
+    position: fixed;
+    height:100vh;
+    width:50px;
+    background-color: #181818;
+}
+.logo-me {
+    height:50px;
+}
