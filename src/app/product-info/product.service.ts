@@ -35,13 +35,15 @@ export class ProductService {
 productInfo$ = new BehaviorSubject<any>([]);
     getProductInfo(){
         this.productInfo$.next(this.dummyProducts);
-        return this.http
-          .get('http://localhost:3000/read/', {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-            }
-          })
-          .pipe(catchError(err => of(err)));
+
+        return of([]);
+        // return this.http
+        //   .get('http://localhost:3000/read/', {
+        //     headers: {
+        //         'Access-Control-Allow-Origin': '*',
+        //     }
+        //   })
+        //   .pipe(catchError(err => of(err)));
 
       }
 
